@@ -13,6 +13,21 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+		<!-- Top Navigation -->
+		<nav id="top-nav">
+			<div id="time-display"></div>
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="PRODUCTS.html">PRODUCTS</a></li>
+				<li><a href="ABOUT.html">ABOUT US</a></li>
+				<li><a href="CONTACT.html">CONTACT US</a></li>
+				<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li> -->
+			</ul>
+		</nav>
 		<div id="wrapper">
 			<div id="bg"></div>
 			<div id="overlay"></div>
@@ -21,9 +36,9 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>KUDA</h1>
-						<!-- <p>Full Color LED panels solutions &nbsp;&bull;&nbsp; Smart home projects &nbsp;&bull;&nbsp; IoT</p> -->
+						<!-- <p>Full Color LED panels solutions &nbsp;&bull;&nbsp; Smart HOME projects &nbsp;&bull;&nbsp; IoT</p> -->
 						<p>Full color LED displays for text and simple graphics.</p>
-						<nav>
+						<!-- <nav>
 							<ul>
 								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -31,18 +46,28 @@
 								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
 								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 							</ul>
-						</nav>
+						</nav> -->
 					</header>
 
 				<!-- Footer -->
-					<!-- <footer id="footer">
-						<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-					</footer> -->
+					<footer id="footer">
+						<!-- <span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span> -->
+						<span class="copyright">Copyright &copy; 2026  KUDA AB</span>
+					</footer>
 
 			</div>
 		</div>
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
+		<script>		// Display current time
+		function updateTime() {
+			const now = new Date();
+			const hours = String(now.getHours()).padStart(2, '0');
+			const minutes = String(now.getMinutes()).padStart(2, '0');
+			const seconds = String(now.getSeconds()).padStart(2, '0');
+			document.getElementById('time-display').textContent = hours + ':' + minutes + ':' + seconds;
+		}
+		updateTime();
+		setInterval(updateTime, 1000);
+					window.onload = function() { document.body.classList.remove('is-preload'); }
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
 		</script>
