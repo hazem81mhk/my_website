@@ -5,58 +5,79 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>CONTACT US - Kuda</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Top Navigation -->
-		<nav id="top-nav">
-			<div id="time-display"></div>
-			<ul>
-				<li><a href="index.html">HOME</a></li>
-				<li><a href="products.html">PRODUCTS</a></li>
-				<li><a href="about.html">ABOUT US</a></li>
-				<li><a href="contact.html">CONTACT US</a></li>
-				<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+
+<head>
+	<title>CONTACT US - Kuda</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+	<!-- Top Navigation -->
+	<nav id="top-nav">
+		<div id="time-display"></div>
+		<ul>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="products.html">PRODUCTS</a></li>
+			<li><a href="about.html">ABOUT US</a></li>
+			<li><a href="contact.html">CONTACT US</a></li>
+			<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 				<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
 				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
 				<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li> -->
-			</ul>
-		</nav>
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
+		</ul>
+	</nav>
+	<div id="wrapper">
+		<div id="bg"></div>
+		<div id="overlay"></div>
+		<div id="main">
 
-				<!-- Header -->
-					<header id="header">
-						<h1>CONTACT US</h1>
-						<p>Get in touch with us for inquiries and support.</p>
-						<!-- <nav>
-							<ul>
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-						</nav> -->
-					</header>
+			<!-- Header -->
+			<header id="header">
+				<h1>CONTACT US</h1>
+				<p>Get in touch with us for inquiries and support.</p>
+				<p>
+					<strong>Phone:</strong> +46 72 295 96 59<br>
+					<!-- <strong>Email:</strong> <a href="mailto:info@kuda81ab.com">info@kuda81ab.com</a><br> -->
+					<strong>Email:</strong> <a href="mailto:kuda81ab@gmail.com">kuda81ab@gmail.com</a><br>
+					<strong>Address:</strong> Hässleholm, Sweden
+				</p>
+				<br>
+				<br>
+				<br>
+				<nav>
+					<ul>
+						<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
+						<li><a href="https://www.facebook.com/profile.php?id=61564933243745"
+								class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+						<li><a href="https://www.instagram.com/kuda81ab/" class="icon brands fa-instagram"><span
+									class="label">Instagram</span></a></li>
+						<li><a href="https://www.tiktok.com/@kuda81ab" class="icon brands fa-tiktok"><span
+									class="label">TikTok</span></a></li>
+						<li><a href="https://wa.me/0046722959659" class="icon brands fa-whatsapp"><span
+									class="label">WhatsApp</span></a></li>
+						<!-- <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li> -->
+						<!-- <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li> -->
+					</ul>
+				</nav>
+			</header>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<!-- <span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span> -->
-						<span class="copyright">Copyright &copy; 2026  KUDA AB</span>
-					</footer>
+			<!-- Footer -->
+			<footer id="footer">
+				<!-- <span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span> -->
+				<!-- <span class="copyright">Copyright &copy; 2026  KUDA AB</span> -->
+				<span class="copyright">KUDA AB</span>
+			</footer>
 
-			</div>
 		</div>
-		<script>		// Display current time
+	</div>
+	<script>		// Display current time
 		function updateTime() {
 			const now = new Date();
 			const hours = String(now.getHours()).padStart(2, '0');
@@ -66,9 +87,10 @@
 		}
 		updateTime();
 		setInterval(updateTime, 1000);
-					window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-	</body>
+		window.onload = function () { document.body.classList.remove('is-preload'); }
+		window.ontouchmove = function () { return false; }
+		window.onorientationchange = function () { document.body.scrollTop = 0; }
+	</script>
+</body>
+
 </html>
