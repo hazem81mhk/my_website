@@ -19,12 +19,16 @@
 <body class="is-preload">
 	<!-- Top Navigation -->
 	<nav id="top-nav">
-		<div id="time-display"></div>
+		<select id="language-select">
+			<option value="en">English</option>
+			<option value="sv">Svenska</option>
+			<option value="ar">العربية</option>
+		</select>
 		<ul>
-			<li><a href="index.html">HOME</a></li>
-			<li><a href="products.html">PRODUCTS</a></li>
-			<li><a href="about.html">ABOUT US</a></li>
-			<li><a href="contact.html">CONTACT US</a></li>
+			<li><a href="index.html" data-en="HOME" data-sv="HEM" data-ar="الرئيسية">HOME</a></li>
+			<li><a href="products.html" data-en="PRODUCTS" data-sv="PRODUKTER" data-ar="المنتجات">PRODUCTS</a></li>
+			<li><a href="about.html" data-en="ABOUT US" data-sv="OM OSS" data-ar="عنا">ABOUT US</a></li>
+			<li><a href="contact.html" data-en="CONTACT US" data-sv="KONTAKTA OSS" data-ar="اتصل بنا">CONTACT US</a></li>
 		</ul>
 	</nav>
 	<div id="wrapper">
@@ -34,11 +38,13 @@
 
 			<!-- Header -->
 			<header id="header">
-				<h1>PRODUCTS</h1>
-				<p>Full Color LED Display </p>
+				<br>
+				<h1 data-en="PRODUCTS" data-sv="PRODUKTER" data-ar="المنتجات">PRODUCTS</h1>
+				<br><br>
+				<p data-en="Full Color LED Display" data-sv="Fullfärgs LED-display" data-ar="شاشة LED ملونة كاملة">Full Color LED Display </p>
 
 				<a href="https://docs.google.com/document/d/16TB1fcgr-gISWywRIQLkCw_TeObEdE_ZIdC3_mxCZkQ/edit?tab=t.0"
-					class="button primary">LedArt Manual</a>
+					class="button primary" data-en="LedArt Manual" data-sv="LedArt Manual" data-ar="دليل LedArt">LedArt Manual</a>
 				<br>
 				<br>
 				<div style="margin: 20px 0;">
@@ -205,12 +211,34 @@ In the setting interface of the main interface of the APP, you can manage fonts,
 			<footer id="footer">
 				<!-- <span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span> -->
 				<!-- <span class="copyright">Copyright &copy; 2026  KUDA AB</span> -->
-				<span class="copyright"><a href="index.html">KUDA AB</a></span>
+				<span class="copyright"><a href="index.html" data-en="KUDA AB" data-sv="KUDA AB" data-ar="KUDA AB">KUDA
+						AB</a></span>
 			</footer>
 
 		</div>
 	</div>
 	<script>
+		// Language selector with persistence
+		const languageSelect = document.getElementById('language-select');
+		const savedLang = localStorage.getItem('selectedLang') || 'en';
+		languageSelect.value = savedLang;
+		document.documentElement.lang = savedLang;
+		document.body.dir = (savedLang === 'ar') ? 'rtl' : 'ltr';
+		document.querySelectorAll('[data-en]').forEach(el => {
+			el.textContent = el.dataset[savedLang] || el.textContent;
+		});
+
+		languageSelect.addEventListener('change', function() {
+			const lang = this.value;
+			localStorage.setItem('selectedLang', lang);
+			document.documentElement.lang = lang;
+			document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+			// Update translatable text
+			document.querySelectorAll('[data-en]').forEach(el => {
+				el.textContent = el.dataset[lang] || el.textContent;
+			});
+		});
+
 		window.onload = function () { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function () { return false; }
 		window.onorientationchange = function () { document.body.scrollTop = 0; }

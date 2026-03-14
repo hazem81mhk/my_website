@@ -15,12 +15,16 @@
 	<body class="is-preload">
 		<!-- Top Navigation -->
 		<nav id="top-nav">
-			<div id="time-display"></div>
-			<ul>
-				<li><a href="index.html">HOME</a></li>
-				<li><a href="products.html">PRODUCTS</a></li>
-				<li><a href="about.html">ABOUT US</a></li>
-				<li><a href="contact.html">CONTACT US</a></li>
+			<select id="language-select">
+				<option value="en">English</option>
+				<option value="sv">Svenska</option>
+				<option value="ar">العربية</option>
+			</select>
+		<ul>
+			<li><a href="index.html" data-en="HOME" data-sv="HEM" data-ar="الرئيسية">HOME</a></li>
+			<li><a href="products.html" data-en="PRODUCTS" data-sv="PRODUKTER" data-ar="المنتجات">PRODUCTS</a></li>
+			<li><a href="about.html" data-en="ABOUT US" data-sv="OM OSS" data-ar="عنا">ABOUT US</a></li>
+			<li><a href="contact.html" data-en="CONTACT US" data-sv="KONTAKTA OSS" data-ar="اتصل بنا">CONTACT US</a></li>
 				<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 				<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
@@ -35,35 +39,49 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>ABOUT US</h1>
-						<p>Learn more about us and our mission in LED technology.</p>
+						<br>
+						<h1 data-en="ABOUT US" data-sv="OM OSS" data-ar="عنا">ABOUT US</h1>
+						<br><br>
+						<p data-en="Learn more about us and our mission in LED technology." data-sv="Läs mer om oss och vårt uppdrag inom LED-teknik." data-ar="تعرف أكثر عنا ومهمتنا في تكنولوجيا LED.">Learn more about us and our mission in LED technology.</p>
 						<br>
 						<br>
-						<p>We specialize in the production of various types of signage and interactive LED panels.</p>
-						<p>	We provide production, installation and service with our own resources. </p>
-						<p>	We offer our customers above-standard services and access.</p>
-						<p>Our assembly groups operate throughout Sweden, and we also carry out the production itself.	</p>
+						<p data-en="We specialize in the production of various types of signage and interactive LED panels." data-sv="Vi specialiserar oss på produktion av olika typer av skyltar och interaktiva LED-paneler." data-ar="نحن متخصصون في إنتاج أنواع مختلفة من اللافتات ولوحات LED التفاعلية.">We specialize in the production of various types of signage and interactive LED panels.</p>
+						<p data-en="We provide production, installation and service with our own resources." data-sv="Vi tillhandahåller produktion, installation och service med våra egna resurser." data-ar="نحن نقدم الإنتاج والتركيب والخدمة بمواردنا الخاصة.">	We provide production, installation and service with our own resources. </p>
+						<p data-en="We offer our customers above-standard services and access." data-sv="Vi erbjuder våra kunder över-standard tjänster och tillgång." data-ar="نحن نقدم لعملائنا خدمات ووصولاً فوق المعيار.">	We offer our customers above-standard services and access.</p>
+						<p data-en="Our assembly groups operate throughout Sweden, and we also carry out the production itself." data-sv="Våra monteringsgrupper opererar i hela Sverige, och vi genomför också själva produktionen." data-ar="تعمل مجموعات التجميع لدينا في جميع أنحاء السويد، ونحن أيضاً نقوم بالإنتاج نفسه.">Our assembly groups operate throughout Sweden, and we also carry out the production itself.	</p>
 					</header>
 
 				<!-- Footer -->
 					<footer id="footer">
 						<!-- <span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span> -->
 						<!-- <span class="copyright">Copyright &copy; 2026  KUDA AB</span> -->
-						<span class="copyright"><a href="index.html">KUDA AB</a></span>
+				<span class="copyright"><a href="index.html" data-en="KUDA AB" data-sv="KUDA AB" data-ar="KUDA AB">KUDA
+						AB</a></span>
 					</footer>
 
 			</div>
 		</div>
-		<script>		// Display current time
-		function updateTime() {
-			const now = new Date();
-			const hours = String(now.getHours()).padStart(2, '0');
-			const minutes = String(now.getMinutes()).padStart(2, '0');
-			const seconds = String(now.getSeconds()).padStart(2, '0');
-			document.getElementById('time-display').textContent = hours + ':' + minutes + ':' + seconds;
-		}
-		updateTime();
-		setInterval(updateTime, 1000);
+		<script>		// Language selector with persistence
+		const languageSelect = document.getElementById('language-select');
+		const savedLang = localStorage.getItem('selectedLang') || 'en';
+		languageSelect.value = savedLang;
+		document.documentElement.lang = savedLang;
+		document.body.dir = (savedLang === 'ar') ? 'rtl' : 'ltr';
+		document.querySelectorAll('[data-en]').forEach(el => {
+			el.textContent = el.dataset[savedLang] || el.textContent;
+		});
+
+		languageSelect.addEventListener('change', function() {
+			const lang = this.value;
+			localStorage.setItem('selectedLang', lang);
+			document.documentElement.lang = lang;
+			document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+			// Update translatable text
+			document.querySelectorAll('[data-en]').forEach(el => {
+				el.textContent = el.dataset[lang] || el.textContent;
+			});
+		});
+
 					window.onload = function() { document.body.classList.remove('is-preload'); }
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }

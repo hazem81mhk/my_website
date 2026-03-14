@@ -19,12 +19,17 @@
 <body class="is-preload">
 	<!-- Top Navigation -->
 	<nav id="top-nav">
-		<div id="time-display"></div>
+		<select id="language-select">
+			<option value="en">English</option>
+			<option value="sv">Svenska</option>
+			<option value="ar">العربية</option>
+		</select>
 		<ul>
-			<li><a href="index.html">HOME</a></li>
-			<li><a href="products.html">PRODUCTS</a></li>
-			<li><a href="about.html">ABOUT US</a></li>
-			<li><a href="contact.html">CONTACT US</a></li>
+			<li><a href="index.html" data-en="HOME" data-sv="HEM" data-ar="الرئيسية">HOME</a></li>
+			<li><a href="products.html" data-en="PRODUCTS" data-sv="PRODUKTER" data-ar="المنتجات">PRODUCTS</a></li>
+			<li><a href="about.html" data-en="ABOUT US" data-sv="OM OSS" data-ar="عنا">ABOUT US</a></li>
+			<li><a href="contact.html" data-en="CONTACT US" data-sv="KONTAKTA OSS" data-ar="اتصل بنا">CONTACT US</a>
+			</li>
 		</ul>
 	</nav>
 	<div id="wrapper">
@@ -35,9 +40,12 @@
 			<!-- Header -->
 			<header id="header">
 				<br>
-				<h1>KUDA</h1>
+				<h1 data-en="KUDA" data-sv="KUDA" data-ar="KUDA">KUDA</h1>
 				<br><br>
-				<p>Full Color LED panels solutions &nbsp;&bull;&nbsp; Smart HOME projects &nbsp;&bull;&nbsp; IoT</p>
+				<p data-en="Full Color LED panels solutions &nbsp;&bull;&nbsp; Smart HOME projects &nbsp;&bull;&nbsp; IoT"
+					data-sv="Fullfärgs LED-panel lösningar &nbsp;&bull;&nbsp; Smarta HEM-projekt &nbsp;&bull;&nbsp; IoT"
+					data-ar=" لوحات LED ملونة كاملة &nbsp;&bull;&nbsp; مشاريع المنزل الذكي &nbsp;&bull;&nbsp; IoT">
+					Full Color LED panels solutions &nbsp;&bull;&nbsp; Smart HOME projects &nbsp;&bull;&nbsp; IoT</p>
 				<!-- <p>Smart Solutions &nbsp;&bull;&nbsp;  Innovative Products &nbsp;&bull;&nbsp;  Reliable Performance</p> -->
 			</header>
 
@@ -45,12 +53,34 @@
 			<footer id="footer">
 				<!-- <span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span> -->
 				<!-- <span class="copyright">Copyright &copy; 2026  KUDA AB</span> -->
-				<span class="copyright"><a href="index.html">KUDA AB</a></span>
+				<span class="copyright"><a href="index.html" data-en="KUDA AB" data-sv="KUDA AB" data-ar="KUDA AB">KUDA
+						AB</a></span>
 			</footer>
 
 		</div>
 	</div>
 	<script>
+		// Language selector with persistence
+		const languageSelect = document.getElementById('language-select');
+		const savedLang = localStorage.getItem('selectedLang') || 'en';
+		languageSelect.value = savedLang;
+		document.documentElement.lang = savedLang;
+		document.body.dir = (savedLang === 'ar') ? 'rtl' : 'ltr';
+		document.querySelectorAll('[data-en]').forEach(el => {
+			el.textContent = el.dataset[savedLang] || el.textContent;
+		});
+
+		languageSelect.addEventListener('change', function () {
+			const lang = this.value;
+			localStorage.setItem('selectedLang', lang);
+			document.documentElement.lang = lang;
+			document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+			// Update translatable text
+			document.querySelectorAll('[data-en]').forEach(el => {
+				el.textContent = el.dataset[lang] || el.textContent;
+			});
+		});
+
 		window.onload = function () { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function () { return false; }
 		window.onorientationchange = function () { document.body.scrollTop = 0; }
