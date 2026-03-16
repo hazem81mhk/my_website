@@ -169,7 +169,7 @@ input, select, textarea {
 	}
 
 	#top-nav li:nth-child(-n+4) a:hover {
-		color: #0d85ca;
+		color: #ffffff;
 	}
 
 	#top-nav li:nth-child(n+5) a {
@@ -650,6 +650,13 @@ input, select, textarea {
 			font-size: 4.35em;
 			font-weight: 900;
 			letter-spacing: 0.035em;
+			line-height: 1em;
+		}
+
+		#header h2 {
+			font-size: 2.35em;
+			font-weight: 900;
+			letter-spacing: 0.015em;
 			line-height: 1em;
 		}
 

@@ -11,6 +11,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="lang-selector.css" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -19,15 +20,10 @@
 <body class="is-preload">
 	<!-- Top Navigation -->
 	<nav id="top-nav">
-		<select id="language-select">
-			<option value="en">English</option>
-			<option value="sv">Svenska</option>
-			<option value="ar">العربية</option>
-		</select>
 		<ul>
 			<li><a href="index.html" data-en="HOME" data-sv="HEM" data-ar="الرئيسية">HOME</a></li>
 			<li><a href="products.html" data-en="PRODUCTS" data-sv="PRODUKTER" data-ar="المنتجات">PRODUCTS</a></li>
-			<li><a href="about.html" data-en="ABOUT US" data-sv="OM OSS" data-ar="عنا">ABOUT US</a></li>
+			<li><a href="about.html" data-en="ABOUT US" data-sv="OM OSS" data-ar="معلومات عنا">ABOUT US</a></li>
 			<li><a href="contact.html" data-en="CONTACT US" data-sv="KONTAKTA OSS" data-ar="اتصل بنا">CONTACT US</a>
 			</li>
 		</ul>
@@ -59,28 +55,20 @@
 
 		</div>
 	</div>
+	<div id="language-selector" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000;">
+		<div class="custom-select">
+			<div class="select-selected" id="select-selected" style="direction: ltr;">
+				<span class="flag flag-us"></span> EN
+			</div>
+			<div class="select-items" id="select-items" style="bottom: 100%; top: auto; direction: ltr;">
+				<div data-value="en" style="direction: ltr;"><span class="flag flag-us"></span> EN</div>
+				<div data-value="sv" style="direction: ltr;"><span class="flag flag-se"></span> SV</div>
+				<div data-value="ar" style="direction: ltr;"><span class="flag flag-sa"></span> AR</div>
+			</div>
+		</div>
+	</div>
+	<script src="lang-selector.js"></script>
 	<script>
-		// Language selector with persistence
-		const languageSelect = document.getElementById('language-select');
-		const savedLang = localStorage.getItem('selectedLang') || 'en';
-		languageSelect.value = savedLang;
-		document.documentElement.lang = savedLang;
-		document.body.dir = (savedLang === 'ar') ? 'rtl' : 'ltr';
-		document.querySelectorAll('[data-en]').forEach(el => {
-			el.textContent = el.dataset[savedLang] || el.textContent;
-		});
-
-		languageSelect.addEventListener('change', function () {
-			const lang = this.value;
-			localStorage.setItem('selectedLang', lang);
-			document.documentElement.lang = lang;
-			document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-			// Update translatable text
-			document.querySelectorAll('[data-en]').forEach(el => {
-				el.textContent = el.dataset[lang] || el.textContent;
-			});
-		});
-
 		window.onload = function () { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function () { return false; }
 		window.onorientationchange = function () { document.body.scrollTop = 0; }
