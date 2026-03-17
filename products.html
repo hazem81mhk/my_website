@@ -66,8 +66,11 @@
 					Color LED Display </h2> -->
 
 
-				<div class="slideshow">
+				<div class="slideshow" id="slideshow">
+
 					<div class="slides" id="slides">
+						<!-- Clone last (for infinite loop) -->
+						<img src="assets/images/products/IMG_009.jpg" />
 
 						<img src="assets/images/products/IMG_001.jpg" />
 						<img src="assets/images/products/IMG_002.jpg" />
@@ -79,10 +82,19 @@
 						<img src="assets/images/products/IMG_008.jpg" />
 						<img src="assets/images/products/IMG_009.jpg" />
 
+						<!-- Clone first -->
+						<img src="assets/images/products/IMG_001.jpg" />
 					</div>
 
 					<button id="prev-btn">&#10094;</button>
 					<button id="next-btn">&#10095;</button>
+
+					<!-- Dots -->
+					<div id="dots"></div>
+
+					<!-- Thumbnails -->
+					<div id="thumbnails"></div>
+
 				</div>
 
 				<br><br><br><br>
