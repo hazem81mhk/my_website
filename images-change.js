@@ -1,41 +1,59 @@
-const images = [
-    "assets/images/products/IMG_001.jpg",
-    "assets/images/products/IMG_002.jpg",
-    "assets/images/products/IMG_003.jpg",
-    "assets/images/products/IMG_004.jpg",
-    "assets/images/products/IMG_005.jpg",
-    "assets/images/products/IMG_006.jpg",
-    "assets/images/products/IMG_007.jpg",
-    "assets/images/products/IMG_008.jpg",
-    "assets/images/products/IMG_009.jpg"
-];
+document.addEventListener("DOMContentLoaded", function () {
 
-let currentIndex = 0;
-
-const slideImg = document.getElementById("slide-img");
-const prevBtn = document.getElementById("prev-btn");
-const nextBtn = document.getElementById("next-btn");
-
-function showImage(index) {
-    slideImg.src = images[index];
-}
-
-nextBtn.addEventListener("click", function () {
-    currentIndex++;
-
-    if (currentIndex >= images.length) {
-        currentIndex = 0;
+    const slides = document.getElementById("slides");
+    if (!slides) {
+        console.error("Slides element not found!");
+        return;
     }
 
-    showImage(currentIndex);
-});
+    const totalSlides = slides.children.length;
 
-prevBtn.addEventListener("click", function () {
-    currentIndex--;
+    let index = 0;
+    let autoSlide;
 
-    if (currentIndex < 0) {
-        currentIndex = images.length - 1;
+    function showSlide(i) {
+        index = (i + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${index * 100}%)`;
     }
 
-    showImage(currentIndex);
+    document.getElementById("next-btn").onclick = () => {
+        showSlide(index + 1);
+        resetAutoSlide();
+    };
+
+    document.getElementById("prev-btn").onclick = () => {
+        showSlide(index - 1);
+        resetAutoSlide();
+    };
+
+    function startAutoSlide() {
+        autoSlide = setInterval(() => {
+            showSlide(index + 1);
+        }, 3000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+    }
+
+    startAutoSlide();
+
+    // Swipe
+    let startX = 0;
+
+    slides.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    slides.addEventListener("touchend", (e) => {
+        let endX = e.changedTouches[0].clientX;
+        let diff = startX - endX;
+
+        if (diff > 50) showSlide(index + 1);
+        else if (diff < -50) showSlide(index - 1);
+
+        resetAutoSlide();
+    });
+
 });

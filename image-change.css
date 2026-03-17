@@ -1,0 +1,39 @@
+.slideshow {
+    width: 90%;
+    /* width: 600px; */
+    /* height: 400px; */
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+    /* border: 1px solid #ccc; */
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Buttons */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#prev-btn { left: 10px; }
+#next-btn { right: 10px; }

@@ -12,6 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="stylesheet" href="lang-selector.css" />
+	<link rel="stylesheet" href="image-change.css" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -65,22 +66,23 @@
 					Color LED Display </h2> -->
 
 
-				<div class="slideshow"
-					style="width: 90%; height: 100%; margin: 10px auto; position: relative; overflow: hidden;">
+				<div class="slideshow">
+					<div class="slides" id="slides">
 
-					<img id="slide-img" src="assets/images/products/IMG_001.jpg" alt="Product Image"
-						style="width: 100%; height: 100%; object-fit: cover;" />
+						<img src="assets/images/products/IMG_001.jpg" />
+						<img src="assets/images/products/IMG_002.jpg" />
+						<img src="assets/images/products/IMG_003.jpg" />
+						<img src="assets/images/products/IMG_004.jpg" />
+						<img src="assets/images/products/IMG_005.jpg" />
+						<img src="assets/images/products/IMG_006.jpg" />
+						<img src="assets/images/products/IMG_007.jpg" />
+						<img src="assets/images/products/IMG_008.jpg" />
+						<img src="assets/images/products/IMG_009.jpg" />
 
-					<button id="prev-btn" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
-        background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer;">
-						&lt;
-					</button>
+					</div>
 
-					<button id="next-btn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
-        background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer;">
-						&gt;
-					</button>
-
+					<button id="prev-btn">&#10094;</button>
+					<button id="next-btn">&#10095;</button>
 				</div>
 
 				<br><br><br><br>
@@ -96,155 +98,7 @@
 
 				<br><br><br><br>
 
-				<!-- <section id="ledart-manual"> -->
-				<!-- <pre>
-						<br>
-
-LedArt app manual 
-
-
-LedArt Operating Manual V5.0
-Communication
-
-Connect to the display via Wi-Fi.
-
-Installation and Uninstall
-
-Download & install LedArt
-Download the APP ”LedArt” from the Android APP market or APP Store, or users can go here to download the app.
-
-Uninstall LedArt
-On the phone interface, press the “LedArt” icon until the “delete” icon appears, and drag directly to “delete”.
-
-
-Editing and sending of the program
-1．Wi-Fi connection & change password
-1）Open the settings on the phone — wireless settings (or WLAN/Wi-Fi), find the wireless signal of the control card (such as A30-15-A2316), click and enter the password (default: 88888888) after the connection.
-
-2）Connect the WLAN function on the phone “Find device” APP, and select the wireless Wi-Fi signal connection for the corresponding control card
-
-3）Modifying password: For the security reason, it is necessary to modify the password before configuration or sending the program, search the computer again and enter a new password for connection.
-
-Select a certain display, you can set X, Y, width and height below;
-Select the area, you can set X, Y, width, height below, or directly drag the area on the black preview area to zoom in, zoom out and move freely;
-If there are too many areas and you can’t distinguish which one, you can remove the hidden name, and you can display the area name in the upper left corner of the area.
-
-
-
-2．Main interface
-The software interface contains the device list and the function setting area
-The function settings include the switching machine setting, the brightness setting, the time correction, the remote control, and shakes etc.
-
-
-
-3．Program editor
-Click the edit program button in the click function area to edit the last edited screen again, or slide the screen into the “screen edit history list” to select a display screen for editing. You can also click the “new screen” button in the lower right corner to create a new display screen, enter the name of the display screen and the resolution of the display
-（Notes: the resolution of the display must be in accordance with the resolution of the program currently set by the control card）。
-
-
-
-4．Text editor
-1）Click on the lower right corner of the APP program editing interface, then click + to select Add Text, enter the text editing interface, input the text content to be displayed, and set the text color, background color, alignment, font, bold, italic, underline effect.
-
-
-
-2）Select the text area, click “T” on the upper right corner to enter the text property interface, and set the single-line display, multi-line display, and move effects of the text.
-
-
-
-5．Animation editor
-1）Click the lower right corner of the APP program editing interface , then click + to select the add animation , enter the animation word editing interface, input the text content to be displayed, and set the font and font size of the text.
-
-
-
-2）Select the animation word area, click on the upper right corner to enter the animation word property interface, and set the animated style, neon background, speed, etc. under the special effect interface.
-
-
-
-6．Clock editor
-1）Click the lower right corner on the screen program edit interface , and click + to Select add clock values。
-
-
-
-2）Select the clock area, click the upper right corner Entering the clock property interface, the clock style (analog clock style, digital clock style two) and style properties can be set.
-
-
-
-7．Timer editor
-1）Click the lower right corner on the screen program edit interface , and click + to select add timer values。
-
-
-
-2）Select the timing area, click the upper right corner Enter the timing property interface to set up a fixed display of text title, target time, style, and so on.
-
-
-
-8．Border and program setting
-1）Area border
-After selecting the video, picture, text or clock in the APP editing interface, click to enter the border setting interface to set the border type and its special effects and speed.
-
-
-2）Program setting
-In the APP editing interface (cannot select the program area), click on the lower right corner to enter the program setting interface . The “Program Border” option can set the border type and its special effects and speed.
-
-
-The Play Mode option sets the number of times the show is played and the duration of the show.
-
-
-
-9．Regional management
-A program can add multiple areas, and at the same time, multiple contents can be added to a region, such as video, picture, text and so on. After that, the added area is at the top level, which is located at the top of the regional list.
-
-
-
-
-9．Program management
-In the main interface of the app, click “Program” Icon on the bottom right corner to enter the program management. In the program management interface, you can see the program list, you can add programs or add display programs
-
-10．Update the program
-After editing the program, click on the send button on the phone screen, enter the sending list, select the corresponding device and send it.
-
-You can also click the send button for the first time, select the export program button and connect the cell phone to the control card through data line, so as to realize program update（only Android mobile phone ）。
-
-Function setting
-1．starting up and power off
-In the main interface of the software, click on the switch to set the button , and enter the switch setting interface. At the same time, it can set the switch function of 4 time periods. Shutdown just cut off the signal to make the screen black screen, in fact no power off.
-
-
-
-
-2．Brightness
-In the software main interface, click the brightness setting button to enter the brightness setting interface. The right and left sliding phones can be switched to default, adjust the three settings automatically according to time and automatically adjust the need to control the card to connect the brightness sensor.
-
-
-
-
-3．Time correction
-In the software main interface, click the time correction setting button to enter the time correction interface, which can directly synchronize the cell phone time, and also can turn off the “automatic setting” and manually set the time.
-
-4．Shakes
-In the software main interface click button to swing into the swing interface, sliding around the screen to switch the picture or video, select a picture or a video shake mobile phone (mobile phone can feel the vibration) or sliding upward on the mobile phone screen, pictures or video can be sent to the control card and will not delete the original content.
-
-
-
-5．Remote-control
-On the software main interface, click the remote control button to enter the remote control interface. It can set the brightness of the display screen, play a serial number program and switch screen.
-
-6．selection tools
-Click the SETTING icon on the left upper corner at the main software interface,
-select the selection tool to enter the full color product selection, input the
-display information automatically according to the actual needs, and
-automatically calculate the basic parameters of the display screen, and
-provide the optional control card type and quantity
-
-
-
-
-7．Other setting
-In the setting interface of the main interface of the APP, you can manage fonts, set the language, share the QR code of the app, and clear the cache.
- 
- 
-</pre> -->
+		
 				</section>
 			</header>
 
