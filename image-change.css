@@ -4,11 +4,13 @@
     margin: 20px auto;
     overflow: hidden;
     position: relative;
+    direction: ltr;
 }
 
 .slides {
     display: flex;
     height: 100%;
+    direction: ltr;
 }
 
 .slides img {
@@ -35,12 +37,21 @@ button {
 #prev-btn { left: 10px; }
 #next-btn { right: 10px; }
 
+html[dir="rtl"] #prev-btn {
+    right: 10px;
+    left: auto;
+}
+
+html[dir="rtl"] #next-btn {
+    left: 10px;
+    right: auto;
+}
+
 /* 🔘 Dots */
 #dots {
-    position: absolute;
-    bottom: 60px;
     width: 100%;
     text-align: center;
+    margin-top: 10px;
 }
 
 #dots span {
@@ -59,11 +70,20 @@ button {
 
 /* 🖼 Thumbnails */
 #thumbnails {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     display: flex;
     overflow-x: auto;
+    margin-top: 10px;
+    gap: 5px;
+    padding: 5px;
+    justify-content: center;
+    scrollbar-width: none; 
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+#thumbnails::-webkit-scrollbar {
+    display: none; /* Chrome */
 }
 
 #thumbnails img {
