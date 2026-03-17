@@ -1,11 +1,13 @@
 const images = [
-    "assets/images/products/IMG_01.jpg",
-    "assets/images/products/IMG_02.jpg",
-    "assets/images/products/IMG_03.jpg",
-    "assets/images/products/IMG_04.jpg",
-    "assets/images/products/IMG_05.jpg",
-    "assets/images/products/IMG_06.jpg",
-    "assets/images/products/IMG_07.jpg"
+    "assets/images/products/IMG_001.jpg",
+    "assets/images/products/IMG_002.jpg",
+    "assets/images/products/IMG_003.jpg",
+    "assets/images/products/IMG_004.jpg",
+    "assets/images/products/IMG_005.jpg",
+    "assets/images/products/IMG_006.jpg",
+    "assets/images/products/IMG_007.jpg",
+    "assets/images/products/IMG_008.jpg",
+    "assets/images/products/IMG_009.jpg"
 ];
 
 let currentIndex = 0;
