@@ -1,5 +1,6 @@
 // Language selector with persistence
-const savedLang = localStorage.getItem('selectedLang') || 'ar';
+// const savedLang = localStorage.getItem('selectedLang') || 'ar';
+const savedLang = localStorage.getItem('selectedLang') || 'sv';
 document.documentElement.lang = savedLang;
 document.body.dir = (savedLang === 'ar') ? 'rtl' : 'ltr';
 document.querySelectorAll('[data-en]').forEach(el => {
@@ -20,7 +21,8 @@ if (initialOption) {
 // Highlight the selected option in the dropdown
 const highlightSelected = () => {
 	options.forEach(opt => opt.classList.remove('selected'));
-	const currentLang = localStorage.getItem('selectedLang') || 'ar';
+	// const currentLang = localStorage.getItem('selectedLang') || 'ar';
+	const currentLang = localStorage.getItem('selectedLang') || 'sv';
 	const selectedOpt = selectItems.querySelector(`[data-value="${currentLang}"]`);
 	if (selectedOpt) selectedOpt.classList.add('selected');
 };
