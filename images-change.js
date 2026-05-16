@@ -51,12 +51,26 @@ document.addEventListener("DOMContentLoaded", function () {
         thumbsContainer.appendChild(img);
     }
 
+    function centerActiveThumb(thumb) {
+        if (!thumb) return;
+
+        if (thumbsContainer.scrollHeight > thumbsContainer.clientHeight) {
+            const top = thumb.offsetTop - (thumbsContainer.clientHeight - thumb.clientHeight) / 2;
+            thumbsContainer.scrollTo({ top, behavior: "smooth" });
+        }
+
+        if (thumbsContainer.scrollWidth > thumbsContainer.clientWidth) {
+            const left = thumb.offsetLeft - (thumbsContainer.clientWidth - thumb.clientWidth) / 2;
+            thumbsContainer.scrollTo({ left, behavior: "smooth" });
+        }
+    }
+
     function updateThumbs() {
         const thumbs = thumbsContainer.children;
         for (let i = 0; i < thumbs.length; i++) thumbs[i].classList.remove("active");
         if (thumbs[index - 1]) {
             thumbs[index - 1].classList.add("active");
-            thumbs[index - 1].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            centerActiveThumb(thumbs[index - 1]);
         }
     }
 

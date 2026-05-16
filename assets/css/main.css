@@ -646,6 +646,12 @@ input, select, textarea {
 		width: 90%;
 	}
 
+#header img {
+	width: 40%;
+	height: auto;
+	max-width: 100%;
+}
+
 		#header h1 {
 			font-size: 4.35em;
 			font-weight: 900;
@@ -1103,6 +1109,10 @@ input, select, textarea {
 			font-size: 1em;
 		}
 
+		#header img {
+			width: 70%;
+		}
+
 		#header nav {
 			font-size: 1em;
 		}
@@ -1195,4 +1205,9 @@ input, select, textarea {
 
 		#header nav {
 			padding: 0 1em;
-		} }
+		}
+
+		#header img {
+			width: 50%;
+		}
+	}
