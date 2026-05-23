@@ -647,9 +647,9 @@ input, select, textarea {
 	}
 
 #header img {
-	width: 100%;
-	max-width: 500px;
+	width: 40%;
 	height: auto;
+	max-width: 100%;
 }
 
 		#header h1 {
@@ -1110,9 +1110,7 @@ input, select, textarea {
 		}
 
 		#header img {
-			width: 100%;
-			max-width: 500px;
-			height: auto;
+			width: 50%;
 		}
 
 		#header nav {
@@ -1209,13 +1207,7 @@ input, select, textarea {
 			padding: 0 1em;
 		}
 
-		#header {
-			width: 100%;
-		}
-
 		#header img {
-			width: 100%;
-			/* max-width: 320px; */
-			height: auto;
+			width: 30%;
 		}
 	}
