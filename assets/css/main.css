@@ -648,8 +648,8 @@ input, select, textarea {
 
 #header img {
 	width: 40%;
-	/* height: auto; */
-	/* max-width: 100%; */
+	height: auto;
+	max-width: 100%;
 }
 
 		#header h1 {
@@ -1110,7 +1110,7 @@ input, select, textarea {
 		}
 
 		#header img {
-			width: 80%;
+			width: 400px;
 		}
 
 		#header nav {
