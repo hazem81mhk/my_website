@@ -168,28 +168,10 @@ a:hover {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#top-nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 1em;
-}
-
-#nav-left {
-	flex: 0 0 auto;
-	display: flex;
-	align-items: center;
-}
-
-#nav-left img {
-	height: 2em;
-	width: auto;
-}
-
-#nav-center,
-#nav-right {
+#top-nav ul {
 	list-style: none;
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	padding: 0;
 	margin: 0;
@@ -197,26 +179,12 @@ a:hover {
 	gap: 0.5em;
 }
 
-#nav-center {
-	flex: 1 1 auto;
-	justify-content: center;
-}
-
-#nav-right {
-	flex: 0 0 auto;
-	justify-content: flex-end;
-}
-
-#top-nav ul {
-	list-style: none;
-}
-
 #top-nav li {
 	display: inline-block;
 	margin: 0 0.25em;
 }
 
-#nav-center li a {
+#top-nav li:nth-child(-n+4) a {
 	color: #fff;
 	text-decoration: none;
 	font-size: 0.9em;
@@ -225,23 +193,44 @@ a:hover {
 	/* transition: color 0.2s ease-in-out; */
 }
 
-#nav-center li a:hover {
+#top-nav li:nth-child(-n+4) a:hover {
 	color: #ffffff;
 }
 
-#nav-right li a {
+#top-nav li:nth-child(n+5) a {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+	border: 0;
+	display: inline-block;
+	margin: 0 0.25em;
+}
+
+#top-nav li:nth-child(n+5) a:before {
+	-moz-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	border-radius: 100%;
+	border: solid 1px #fff;
+	display: block;
+	font-size: 1em;
+	height: 1.8em;
+	line-height: 1.8em;
+	position: relative;
+	text-align: center;
+	top: 0;
+	width: 1.8em;
+}
+
+#top-nav li:nth-child(n+5) a:hover:before {
+	background-color: rgba(255, 255, 255, 0.175);
 	color: #fff;
-	text-decoration: none;
-	font-size: 0.9em;
-	border: none;
-	padding: 0.5em 1em;
 }
 
-#nav-right li a:hover {
-	color: #ffffff;
+#top-nav li:nth-child(n+5) a:active:before {
+	background-color: rgba(255, 255, 255, 0.35);
+	color: #fff;
 }
-
-/* Removed old nth-child rules - now using separate nav-center and nav-right */
 
 #top-nav a span {
 	display: none;
