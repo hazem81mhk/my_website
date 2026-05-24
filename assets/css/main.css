@@ -181,11 +181,6 @@ a:hover {
 	align-items: center;
 }
 
-#nav-left a {
-	text-decoration: none;
-	border: none;
-}
-
 #nav-left img {
 	height: 2em;
 	width: auto;
